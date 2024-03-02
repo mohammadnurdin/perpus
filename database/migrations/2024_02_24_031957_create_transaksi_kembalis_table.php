@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_transaksi_pinjam');
             $table->string('no_transaksi_kembali');
-            $table->string('id_anggota');
+            $table->string('kd_anggota');
             $table->date('tg_pinjam');
             $table->date('tg_kembali');
             $table->string('kd_koleksi');
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('jns_bhn_pustaka');
             $table->string('jns_koleksi');
             $table->string('jns_media');
+            $table->integer('denda');
+            $table->string('ket');
             $table->bigInteger('id_pengguna');
 
             $table->timestamps();

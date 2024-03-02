@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\KoleksiController;
+use App\Http\Controllers\TrxPinjamController;
+use App\Http\Controllers\TrxKembaliController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,4 +36,6 @@ use App\Http\Controllers\KoleksiController;
     // Route::get('ruangans', [RuangController::class, 'indexPage'])->name('ruangans.page');
 
     Route::resource('koleksis', KoleksiController::class); //users.index, users.create, users.edit, users.update, users.destroy
-Route::get('koleksi/showall', [KoleksiController::class, 'showAll'])->name('koleksi.all');
+    Route::get('koleksi/showall', [KoleksiController::class, 'showAll'])->name('koleksi.all');
+    Route::resource('pinjams', TrxPinjamController::class); //users.index, users.create, users.edit, users.update, users.destroy
+    Route::resource('kembalis', TrxKembaliController::class); //users.index, users.create, users.edit, users.update, users.destroy
