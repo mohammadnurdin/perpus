@@ -44,7 +44,6 @@
                                 <td>{{$row->no_transaksi_kembali}}</td>
                                 <td>{{$row->no_transaksi_pinjam}}</td>
                                 <td>{{$row->anggota->nm_anggota}}</td>
-                                <td>{{$row->no_transaksi_pinjam}}</td>
                                 <td>{{$row->tg_pinjam}}</td>
                                 <td>{{$row->tg_kembali}}</td>
                                 <td>{{$row->judul}}</td>

@@ -80,7 +80,7 @@
                           <div class="form-group row mt-3">
                               <label for="tg_kembali" class="col-md-4 col-form-label text-right">Tanggal Kembali</label>
                               <div class="col-md-6">
-                                  <input type="date" id="tg_kembali" class="form-control" name="tg_kembali" required >
+                                  <input type="date" id="tg_kembali" class="form-control" name="tg_kembali" onchange="hitungDenda(this.value)" required >
                                   @if ($errors->has('tg_kembali'))
                                       <span class="text-danger">{{ $errors->first('tg_kembali') }}</span>
                                   @endif

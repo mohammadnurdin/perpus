@@ -93,6 +93,9 @@
                             <a class="nav-link" href="{{ route('kembalis.index') }}">Transaksi Kembali</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reports.index') }}">Report</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                         </li>
                         @endguest
