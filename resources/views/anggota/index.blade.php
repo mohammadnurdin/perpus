@@ -20,11 +20,11 @@
                             <tr>
                                 <th>Kode Anggota</th>
                                 <th>Nama Anggota</th>
-                                <th>Tempat lahir Anggota</th>
-                                <th>Tanggal lahir Anggota</th>
+                                <th>Tempat Lahir Anggota</th>
+                                <th>Tanggal Lahir Anggota</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
-                                <th>No HP</th>
+                                <th>No Hp</th>
                                 <th>Jenis Anggota</th>
                                 <th>Status</th>
                                 <th>Jumlah Pinjam</th>
@@ -47,8 +47,8 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label class="form-label">Kode Anggota</label>
-                                <input type="text" name="Kd_anggota" id="Kd_anggota" class="form-control" />
-                                <span id="Kd_anggota_error" class="text-danger"></span>
+                                <input type="text" name="kd_anggota" id="kd_anggota" class="form-control" />
+                                <span id="kd_anggota_error" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Nama Anggota</label>
@@ -56,53 +56,53 @@
                                 <span id="nm_anggota_error" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jenis kelamin</label>
+                                <label class="form-label">Jenis Kelamin</label>
                                 <select class="form-select" id="jk" name="jk" aria-label="jk">
                                     <option value="">Choose</option>
                                     <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
                                 <span id="jk_error" class="text-danger"></span>
-                                </div>
+                            </div>
                             <div class="mb-3">
-                                <label class="form-label">Tempat lahir Anggota</label>
-                                    <input type="text" name="tp_lahir" id="tp_lahir" class="form-control" />
-                                    <span id="tp_lahir_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                <label class="form-label">Tanggal lahir Anggota</label>
-                                    <input type="date" name="tg_lahir" id="tg_lahir" class="form-control" />
-                                    <span id="tg_lahir_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
+                                <label class="form-label">Tempat Lahir</label>
+                                <input type="text" name="tp_lahir" id="tp_lahir" class="form-control" />
+                                <span id="tp_lahir_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tanggal Lahir</label>
+                                <input type="date" name="tg_lahir" id="tg_lahir" class="form-control" />
+                                <span id="tg_lahir_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Alamat</label>
-                                    <input type="text" name="alamat" id="alamat" class="form-control" />
-                                    <span id="alamat_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                <label class="form-label">No HP</label>
-                                    <input type="text" name="no_hp" id="no_hp" class="form-control" />
-                                    <span id="no_hp_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
+                                <input type="text" name="alamat" id="alamat" class="form-control" />
+                                <span id="alamat_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">No Hp</label>
+                                <input type="text" name="no_hp" id="no_hp" class="form-control" />
+                                <span id="no_hp_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Jenis Anggota</label>
-                                    <select class="form-select" id="jns_anggota" name="jns_anggota" aria-label="jns_anggota">
+                                <select class="form-select" id="jns_anggota" name="jns_anggota" aria-label="jns_anggota">
                                     <option value="">Choose</option>
                                     <option value="Member">Member</option>
                                     <option value="Non Member">Non Member</option>
                                 </select>
-                                    <span id="jns_anggota_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
+                                <span id="jns_anggota_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Status</label>
                                 <select class="form-select" id="status" name="status" aria-label="status">
                                     <option value="">Choose</option>
-                                    <option value="Active">Active</option>
-                                    <option value="In Active">In Active</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">In Active</option>
                                 </select>
-                                    <span id="status_error" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
+                                <span id="status_error" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Jumlah Pinjam</label>
                                     <input type="text" name="jml_pjm" id="jml_pjm" class="form-control" />
                                     <span id="jml_pjm_error" class="text-danger"></span>
@@ -148,14 +148,14 @@
                 'no_hp' : $('#no_hp').val(),
                 'jns_anggota' : $('#jns_anggota').val(),
                 'status' : $('#status').val(),
-                'jml_pjm' : $('#jml_pjm').val(),           
+                'jml_pjm' : $('#jml_pjm').val(),
                 }
 
                 $.ajax({
                     headers: {
-                        "Content-Type":"application/json",
+                        "Content-Type":"application/json"
                     },
-                    url:"{{ route('anggotas.store')}}",
+                    url:"{{ route('anggotas.store') }}",
                     method:"POST",
                     data: JSON.stringify(formData),
                     success:function(data){
@@ -184,9 +184,10 @@
                     'jml_pjm' : $('#jml_pjm').val(),
                 }
 
+
                 $.ajax({ 
                     headers: {
-                        "Content-Type":"application/json",
+                        "Content-Type":"application/json"
                     },
                     url:"{{ url('anggotas/')}}/"+$('#id').val(),
                     method:"PUT",
@@ -212,7 +213,7 @@
             headers: {
                 "Content-Type":"application/json"
             },
-            url:"{{ route('anggota.all')}}",
+            url:"{{ route('anggota.all') }}",
             success: function(response) {
             // console.log(response);
                 var json = response;
@@ -268,7 +269,7 @@
         $.ajax({
             type: "GET",
             headers: {
-                "Content-Type":"application/json",
+                "Content-Type":"application/json"
             },
             url:"{{ url('anggotas')}}/"+id,
             success: function(response) {
@@ -283,7 +284,6 @@
                 $('#jns_anggota').val(response.jns_anggota);
                 $('#status').val(response.status);
                 $('#jml_pjm').val(response.jml_pjm);
-               
             },
             error: function(err) {
                 console.log(err);
@@ -295,7 +295,7 @@
         alert('Yakin untuk hapus data ?');
         $.ajax({
             headers: {
-                "Content-Type":"application/json",
+                "Content-Type":"application/json"
             },
             url:"{{ url('anggotas')}}/"+id,
             method:"DELETE",            
@@ -304,7 +304,7 @@
                 }),
             success:function(data){
                 $('#action_button').attr('disabled', false);
-                $('#message').html('<div class="alert alert-success">'+data+'</div>');
+                $('#message').html('<div class="alert alert-success">'+data.message+'</div>');
                 $('#action_modal').modal('hide');
                 $('#sample_data').DataTable().destroy();
                 showAll();
