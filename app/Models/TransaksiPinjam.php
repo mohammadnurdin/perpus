@@ -19,5 +19,18 @@ class TransaksiPinjam extends Model
         'jns_media',
         'id_pengguna',
     ];
-    
+    public function koleksi()
+    {
+        return $this->belongsTo(Koleksi::class, "kd_koleksi", "kd_koleksi");
+    }
+
+    public function pengguna()
+    {
+        return $this->belongsTo(User::class, "id_pengguna");
+    }
+
+    public function anggota()
+    {
+        return $this->belongsTo(Anggota::class, "kd_anggota", "kd_anggota");
+    }
 }

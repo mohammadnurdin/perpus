@@ -6,35 +6,20 @@
       <div class="row justify-content-center">
           <div class="col-md-10">
               <div class="card">
-                  <div class="card-header">Add Transaksi Kembali</div>
+                  <div class="card-header">Add User</div>
                   <div class="card-body">
   
-                      <form action="{{ route('kembalis.store') }}" method="POST">
+                      <form action="{{ route('pinjams.store') }}" method="POST">
                           @csrf
 
                           <div class="form-group row mt-3">
-                              <label for="no_transaksi_kembali" class="col-md-4 col-form-label text-right">No Transaksi Kembali</label>
+                              <label for="no_transaksi_pinjam" class="col-md-4 col-form-label text-right">No Transaksi Pinjam</label>
                               <div class="col-md-6">
-                                  <input type="text" id="no_transaksi_kembali" class="form-control" name="no_transaksi_kembali" required autofocus>
-                                  @if ($errors->has('no_transaksi_kembali'))
-                                      <span class="text-danger">{{ $errors->first('no_transaksi_kembali') }}</span>
+                                  <input type="text" id="no_transaksi_pinjam" class="form-control" name="no_transaksi_pinjam" required autofocus>
+                                  @if ($errors->has('no_transaksi_pinjam'))
+                                      <span class="text-danger">{{ $errors->first('no_transaksi_pinjam') }}</span>
                                   @endif
                               </div>
-                          </div>
-
-                          <div class="form-group row mt-3">
-                            <label for="no_transaksi_pinjam" class="col-md-4 col-form-label text-right">No Transaksi Pinjam</label>
-                            <div class="col-md-6">
-                                <select class="form-select" id="no_transaksi_pinjam" name="no_transaksi_pinjam" aria-label="no_transaksi_pinjam" onchange="selectPinjam(this.value)">
-                                    <option value="">Choose</option>
-                                    @foreach($pinjams as $item)
-                                    <option value="{{ $item->no_transaksi_pinjam}}">{{ $item->no_transaksi_pinjam}}</option>
-                                    @endforeach
-                                </select>
-                                @if ($errors->has('no_transaksi_pinjam'))
-                                    <span class="text-danger">{{ $errors->first('no_transaksi_pinjam') }}</span>
-                                @endif
-                            </div>
                           </div>
 
                           <div class="form-group row mt-3">
@@ -55,7 +40,7 @@
                           <div class="form-group row mt-3">
                             <label for="kd_koleksi" class="col-md-4 col-form-label text-right">Kode Koleksi</label>
                             <div class="col-md-6">
-                                <select class="form-select" id="kd_koleksi" name="kd_koleksi" aria-label="kd_koleksi">
+                                <select class="form-select" id="kd_koleksi" name="kd_koleksi" aria-label="kd_koleksi" onchange="selectKoleksi(this.value)">
                                     <option value="">Choose</option>
                                     @foreach($koleksis as $item)
                                     <option value="{{ $item->kd_koleksi}}">{{ $item->kd_koleksi}}</option>
@@ -78,11 +63,11 @@
                           </div>
 
                           <div class="form-group row mt-3">
-                              <label for="tg_kembali" class="col-md-4 col-form-label text-right">Tanggal Kembali</label>
+                              <label for="tg_bts_kembali" class="col-md-4 col-form-label text-right">Tanggal Pinjam</label>
                               <div class="col-md-6">
-                                  <input type="date" id="tg_kembali" class="form-control" name="tg_kembali" required >
-                                  @if ($errors->has('tg_kembali'))
-                                      <span class="text-danger">{{ $errors->first('tg_kembali') }}</span>
+                                  <input type="date" id="tg_bts_kembali" class="form-control" name="tg_bts_kembali" required >
+                                  @if ($errors->has('tg_bts_kembali'))
+                                      <span class="text-danger">{{ $errors->first('tg_bts_kembali') }}</span>
                                   @endif
                               </div>
                           </div>
@@ -136,25 +121,6 @@
                                 @endif
                             </div>
                           </div>
-
-                          <div class="form-group row mt-3">
-                              <label for="denda" class="col-md-4 col-form-label text-right">Denda</label>
-                              <div class="col-md-6">
-                                  <input type="text" id="denda" class="form-control" name="denda" required autofocus>
-                                  @if ($errors->has('denda'))
-                                      <span class="text-danger">{{ $errors->first('denda') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-                          <div class="form-group row mt-3">
-                              <label for="ket" class="col-md-4 col-form-label text-right">Keterangan</label>
-                              <div class="col-md-6">
-                                  <input type="text" id="ket" class="form-control" name="ket" required autofocus>
-                                  @if ($errors->has('ket'))
-                                      <span class="text-danger">{{ $errors->first('ket') }}</span>
-                                  @endif
-                              </div>
-                          </div>
   
                           <div class="col-md-6 offset-md-4 mt-3 p-2 d-grid">
                               <button type="submit" class="btn btn-primary">
@@ -171,19 +137,16 @@
 </main>
 <script>
 
-    function selectPinjam(id) {
+    function selectKoleksi(id) {
 
         $.ajax({
             type: "GET",
             headers: {
                 "Content-Type":"application/json"
             },
-            url:"{{ url('kembalis')}}/"+id,
+            url:"{{ url('pinjams')}}/"+id,
             success: function(response) {
                 $('#id').val(response.id);
-                $('#tg_pinjam').val(response.tg_pinjam);
-                $('#kd_anggota').val(response.kd_anggota);
-                $('#kd-koleksi').val(response.kd-koleksi);
                 $('#judul').val(response.judul);
                 $('#jns_bhn_pustaka').val(response.jns_bhn_pustaka);
                 $('#jns_koleksi').val(response.jns_koleksi);
@@ -195,34 +158,6 @@
         });
     }
 
-    function hitungDenda(tanggalKembali) {
-
-$.ajax({
-    type: "GET",
-    headers: {
-        "Content-Type":"application/json"
-    },
-    url:"{{ url('kembalis')}}/"+ $('#no_transaksi_pinjam').val(),
-    success: function(response) {
-        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-        var kembali = new Date(tanggalKembali);
-        var tanggalBatas = new Date(response.tg_bts_kembali);
-        var selisih = Math.round(Math.round((kembali.getTime()- tanggalBatas.getTime()) / (oneDay)));
-
-        if(selisih > 30){
-            $('#denda').val(selisih * 1000);
-        }else if(selisih > 7){
-            $('#denda').val(selisih * 500);
-        }else if(selisih > 1){
-            $('#denda').val("2000");
-        }
-        console.log(selisih);
-    },
-    error: function(err) {
-        console.log(err);
-    }
-});
-}
     
 </script>
 @endsection

@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Koleksi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class Koleksicontroller extends Controller
 {
-    /**
+  /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $koleksis = Koleksi::All();
+        return view('koleksi.index', compact('koleksis'));
+    }
+
+    public function showAll()
+    {
+        return response()->json(Koleksi::All());
     }
 
     /**
@@ -27,15 +35,52 @@ class Koleksicontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'kd_koleksi'      => 'required',
+            'judul'           => 'required',
+            'jns_bhn_pustaka' => 'required',
+            'jns_koleksi'     => 'required',
+            'jns_media'       => 'required',
+            'pengarang'       => 'required',
+            'penerbit'        => 'required',
+            'tahun'           => 'required',
+            'cetakan'         => 'required',
+            'edisi'           => 'required',
+            'status'          => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $koleksi = Koleksi::create([
+            'kd_koleksi'      => $request->kd_koleksi,
+            'judul'           => $request->judul,
+            'jns_bhn_pustaka' => $request->jns_bhn_pustaka,
+            'jns_koleksi'     => $request->jns_koleksi,
+            'jns_media'       => $request->jns_media,
+            'pengarang'       => $request->pengarang,
+            'penerbit'        => $request->penerbit,
+            'tahun'           => $request->tahun,
+            'cetakan'         => $request->cetakan,
+            'edisi'           => $request->edisi,
+            'status'          => $request->status,
+
+        ]);
+
+        return response()->json([
+            'message' => 'Koleksi successfully created',
+            'koleksi' => $koleksi
+        ], 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        return response()->json($koleksi);
     }
 
     /**
@@ -49,16 +94,56 @@ class Koleksicontroller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'kd_koleksi'      => 'required',
+            'judul'           => 'required',
+            'jns_bhn_pustaka' => 'required',
+            'jns_koleksi'     => 'required',
+            'jns_media'       => 'required',
+            'pengarang'       => 'required',
+            'penerbit'        => 'required',
+            'tahun'           => 'required',
+            'cetakan'         => 'required',
+            'edisi'           => 'required',
+            'status'          => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $koleksi = Koleksi::where('id', $id)->update([
+            'kd_koleksi'      => $request->kd_koleksi,
+            'judul'           => $request->judul,
+            'jns_bhn_pustaka' => $request->jns_bhn_pustaka,
+            'jns_koleksi'     => $request->jns_koleksi,
+            'jns_media'       => $request->jns_media,
+            'pengarang'       => $request->pengarang,
+            'penerbit'        => $request->penerbit,
+            'tahun'           => $request->tahun,
+            'cetakan'         => $request->cetakan,
+            'edisi'           => $request->edisi,
+            'status'          => $request->status,
+
+        ]);
+
+        return response()->json([
+            'message' => 'Koleksi successfully updated',
+            'koleksi' => $koleksi
+        ], 201);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        $koleksi->delete();
+        return response()->json([
+            'message' => 'Koleksi successfully deleted',
+        ], 201);
     }
 }

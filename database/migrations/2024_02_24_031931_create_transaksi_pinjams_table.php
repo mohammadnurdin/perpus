@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transaksi_pinjams', function (Blueprint $table) {
             $table->id();
             $table->string('no_transaksi_pinjam');
-            $table->string('id_anggota');
+            $table->string('kd_anggota');
             $table->date('tg_pinjam');
             $table->date('tg_bts_kembali');
             $table->string('kd_koleksi');
