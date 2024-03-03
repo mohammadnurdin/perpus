@@ -46,7 +46,7 @@
                             <div class="col-md-6">
                                 <select class="form-select" id="hak_akses" name="hak_akses" aria-label="hak_akses">
                                     <option value="">Choose</option>
-                                    <option value="admin">Administration</option>
+                                    <option value="admin">Administrator</option>
                                     <option value="anggota">Anggota</option>
                                 </select>
                                 @if ($errors->has('hak_akses'))

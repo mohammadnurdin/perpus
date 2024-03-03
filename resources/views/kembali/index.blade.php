@@ -31,7 +31,7 @@
                                 <th scope="col">Jenis Media</th>
                                 <th scope="col">Denda</th>
                                 <th scope="col">Keterangan</th>
-                                <th scope="col">Nama Pengguna</th>
+                                <!-- <th scope="col">Nama Pengguna</th> -->
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -52,7 +52,7 @@
                                 <td>{{$row->jns_media}}</td>
                                 <td>{{$row->denda}}</td>
                                 <td>{{$row->ket}}</td>
-                                <td>{{$row->pengguna->nm_pengguna}}</td>
+                                <!-- <td>{{$row->pengguna->nm_pengguna}}</td> -->
                                 <td> 
                                     <a href="{{ route('kembalis.edit', $row->id) }}" class="btn btn-sm btn-warning">
                                         Edit
