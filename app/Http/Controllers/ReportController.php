@@ -6,7 +6,8 @@ use App\Models\TransaksiPinjam;
 use App\Models\Koleksi;
 use App\Models\Anggota;
 use Illuminate\Http\Request;
-use Illuminate\Http\PDF;
+use PDF;
+use TCPDF;
 
 class ReportController extends Controller
 {
@@ -15,6 +16,9 @@ class ReportController extends Controller
      */
     public function index()
     {
+
+        // $data = TransaksiKembali::all();
+        // return view('report/index', compact('data'));
         $data = [];
         return view('report/index', compact('data'));
     }
@@ -78,4 +82,26 @@ class ReportController extends Controller
         $kembali->delete();
         return redirect()->route('kembalis.index')->with('success','Great! You have Successfully deleted transaksi');
     }
+
+//     public function generatePDF(Request $request)
+// {
+//     $tg_awal = $request->input('tg_awal');
+//     $tg_akhir = $request->input('tg_akhir');
+
+//     // Proses filter data dan pengambilan data dari database
+
+//     $pdf = new TCPDF();
+//     $pdf->SetMargins(15, 15, 15);
+//     $pdf->AddPage();
+
+//     // Tambahkan konten PDF di sini, misalnya tabel dengan data yang diambil dari database
+
+//     $pdf->Output('report.pdf', 'S');
+    
+//     // Return the PDF as response
+//     return response($pdf->Output('report.pdf', 'S'), 200, [
+//         'Content-Type' => 'application/pdf',
+//         'Content-Disposition' => 'inline; filename="report.pdf"'
+//     ]);
+// }
 }

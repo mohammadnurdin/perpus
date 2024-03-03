@@ -66,4 +66,37 @@
             </div>
         </div>
     </div>
+    <!-- <script>
+    function printPDF() {
+        // Buat request ke server untuk menghasilkan PDF
+        fetch('{{ route('report.pdf') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                tg_awal: document.getElementById('tg_awal').value,
+                tg_akhir: document.getElementById('tg_akhir').value
+            })
+        })
+        .then(response => response.blob())
+        .then(blob => {
+            // Hasilkan URL dari blob
+            const url = URL.createObjectURL(blob);
+            
+            // Buka URL dalam window baru
+            const newWindow = window.open(url, '_blank');
+            
+            // Tunggu 2 detik untuk memastikan URL sudah terbuka
+            setTimeout(() => {
+                // Cetak window baru
+                newWindow.print();
+            }, 2000);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script> -->
 @endsection

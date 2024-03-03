@@ -40,5 +40,10 @@ use App\Http\Controllers\ReportController;
     Route::get('koleksi/showall', [KoleksiController::class, 'showAll'])->name('koleksi.all');
     
     Route::resource('pinjams', TrxPinjamController::class); //users.index, users.create, users.edit, users.update, users.destroy
-    Route::resource('kembalis', TrxKembaliController::class); //users.index, users.create, users.edit, users.update, users.destroy
-    Route::resource('reports', ReportController::class); //users.index, users.create, users.edit, users.update, users.destroy
+    Route::get('pinjam/showall', [TrxPinjamController::class, 'showAll'])->name('pinjam.all');
+
+    Route::resource('kembalis', TrxKembaliController::class); //users.index, users.create, users.edit, users.update, users.destroy    Route::resource('reports', ReportController::class); //users.index, users.create, users.edit, users.update, users.destroy
+
+
+    // Route::post('/report/pdf', 'ReportController@generatePDF')->name('report.pdf');
+    Route::resource('reports', ReportController::class);

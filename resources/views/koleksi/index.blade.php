@@ -60,20 +60,40 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="jns_bhn_pustaka">Jenis Pustaka</label>
-                                <input type="text" name="jns_bhn_pustaka" id="jns_bhn_pustaka" class="form-control" />
+                                <label class="form-label">Jenis Pustaka</label>
+                                <select class="form-select" id="jns_bhn_pustaka" name="jns_bhn_pustaka" aria-label="jns_bhn_pustaka">
+                                    <option value="">Choose</option>
+                                    <option value="Perpustakaan Umum">Perpustakaan Umum</option>
+                                    <option value="Perpustakaan Akademik">Perpustakaan Akademik</option>
+                                    <option value="Perpustakaan Sekolah">Perpustakaan Sekolah</option>
+                                    <option value="Perpustakaan Khusus">Perpustakaan Khusus</option>
+                                    <option value="Perpustakaan Koleksi Khusus">Buku Print on Demand</option>
+                                </select>
                                 <span id="jns_bhn_pustaka_error" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="jns_koleksi">Jenis Koleksi</label>
-                                <input type="text" name="jns_koleksi" id="jns_koleksi" class="form-control" />
+                                <label class="form-label">Jenis Koleksi</label>
+                                <select class="form-select" id="jns_koleksi" name="jns_koleksi" aria-label="jns_koleksi">
+                                    <option value="">Choose</option>
+                                    <option value="Koleksi Umum">Koleksi Umum</option>
+                                    <option value="Koleksi Referensi">Koleksi Referensi</option>
+                                    <option value="Koleksi Fiksi">Koleksi Fiksi</option>
+                                    <option value="Koleksi Non Fiksi">Koleksi Non Fiksi</option>
+                                </select>
                                 <span id="jns_koleksi_error" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="jns_media">Jenis Media</label>
-                                <input type="text" name="jns_media" id="jns_media" class="form-control" />
+                                <label class="form-label">Jenis Media</label>
+                                <select class="form-select" id="jns_media" name="jns_media" aria-label="jns_media">
+                                    <option value="">Choose</option>
+                                    <option value="Buku Cetak">Buku Cetak</option>
+                                    <option value="E-Book">E-Book</option>
+                                    <option value="Audio Book">Audio Book</option>
+                                    <option value="Buku Audiovisual">Buku Audiovisual</option>
+                                    <option value="Buku Digital Interaktif">Buku Digital Interaktif</option>
+                                </select>
                                 <span id="jns_media_error" class="text-danger"></span>
                             </div>
 
@@ -96,14 +116,28 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="cetakan">Cetakan</label>
-                                <input type="text" name="cetakan" id="cetakan" class="form-control" />
+                                <label class="form-label">Cetakan</label>
+                                <select class="form-select" id="cetakan" name="cetakan" aria-label="cetakan">
+                                    <option value="">Choose</option>
+                                    <option value="Buku Baru">Buku Baru</option>
+                                    <option value="Buku Bekas">Buku Bekas</option>
+                                    <option value="Buku Antik">Buku Antik</option>
+                                    <option value="Buku Rekondisi">Buku Rekondisi</option>
+                                    <option value="Buku Print on Demand">Buku Print on Demand</option>
+                                </select>
                                 <span id="cetakan_error" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="edisi">Edisi</label>
-                                <input type="text" name="edisi" id="edisi" class="form-control" />
+                                <label class="form-label">Edisi</label>
+                                <select class="form-select" id="edisi" name="edisi" aria-label="edisi">
+                                    <option value="">Choose</option>
+                                    <option value="Edisi Pertama">Edisi Pertama</option>
+                                    <option value="Edisi Tebaru">Edisi Tebaru</option>
+                                    <option value="Edisi Terjermahan">Edisi Terjermahan</option>
+                                    <option value="Edisi Khusus">Edisi Khusus</option>
+                                    <option value="Edisi Digital">Edisi Digital</option>
+                                </select>
                                 <span id="edisi_error" class="text-danger"></span>
                             </div>
 
